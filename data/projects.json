@@ -1,0 +1,195 @@
+[
+  {
+    "id": "folclore",
+    "title": "Arquivo Investigativo do Folclore",
+    "badges": [
+      [
+        "badge-green",
+        "Projeto de sala"
+      ]
+    ],
+    "short": "Investigação temática sobre lendas do folclore brasileiro, com produção de material e apresentação final — base do sistema digital S.I.I.F.",
+    "full": "Projeto temático sobre o <strong>folclore brasileiro</strong> conduzido com a turma como uma investigação: cada lenda vira um \"caso\" a ser documentado, com dossiês, fichas e material produzido à mão pelos próprios alunos, simulando um verdadeiro arquivo de investigação. O projeto termina com uma apresentação para a comunidade escolar, com um mural interativo e atividades de reconhecimento das lendas.<br><br>Esse projeto foi o ponto de partida para o desenvolvimento do <strong>S.I.I.F. (Sistema de Investigação e Inteligência Folclórica)</strong>, um sistema digital com tema de investigação policial que apoia a atividade — veja em \"Sistemas para a escola\" mais abaixo.",
+    "photos": [
+      "folclore/01.jpg",
+      "folclore/02.jpg",
+      "folclore/03.jpg",
+      "folclore/04.jpg",
+      "folclore/05.jpg",
+      "folclore/06.jpg",
+      "folclore/07.jpg",
+      "folclore/08.jpg",
+      "folclore/09.jpg",
+      "folclore/10.jpg",
+      "folclore/11.jpg",
+      "folclore/12.jpg",
+      "folclore/13.jpg",
+      "folclore/14.jpg",
+      "folclore/15.jpg",
+      "folclore/16.jpg",
+      "folclore/17.jpg",
+      "folclore/18.jpg",
+      "folclore/19.jpg",
+      "folclore/20.jpg",
+      "folclore/21.jpg",
+      "folclore/22.jpg",
+      "folclore/23.jpg",
+      "folclore/24.jpg",
+      "folclore/25.jpg",
+      "folclore/26.jpg",
+      "folclore/27.jpg",
+      "folclore/28.jpg",
+      "folclore/29.jpg",
+      "folclore/30.jpg",
+      "folclore/31.jpg",
+      "folclore/32.jpg",
+      "folclore/33.jpg",
+      "folclore/34.jpg",
+      "folclore/35.jpg",
+      "folclore/36.jpg",
+      "folclore/37.jpg",
+      "folclore/38.jpg",
+      "folclore/39.jpg",
+      "folclore/40.jpg",
+      "folclore/41.jpg",
+      "folclore/42.jpg",
+      "folclore-apresentacao/01.jpg",
+      "folclore-apresentacao/02.jpg",
+      "folclore-apresentacao/03.jpg",
+      "folclore-apresentacao/04.jpg",
+      "folclore-apresentacao/05.jpg",
+      "folclore-apresentacao/06.jpg",
+      "folclore-apresentacao/07.jpg",
+      "folclore-apresentacao/08.jpg",
+      "folclore-apresentacao/09.jpg"
+    ]
+  },
+  {
+    "id": "micro-rpg",
+    "title": "Micro-RPG Napoleônico",
+    "badges": [
+      [
+        "badge-blue",
+        "Ensino Médio"
+      ],
+      [
+        "badge-muted",
+        "Aula de aprofundamento"
+      ]
+    ],
+    "short": "Aula de aprofundamento de conteúdo sobre a Era Napoleônica usando mecânicas de RPG de mesa — não é uma eletiva, é parte da aula regular.",
+    "full": "Uma aula de <strong>aprofundamento de conteúdo</strong> para o Ensino Médio sobre o período napoleônico e a Revolução Francesa, estruturada em fases (\"O Despertar das Ideias\", \"A Jornada do Cidadão\", \"O Tempo do Terror\", \"O Império de Napoleão\"). Usa mecânicas leves de RPG de mesa — progressão por fases, recursos e decisões — como ferramenta para revisar e aprofundar o conteúdo histórico já trabalhado em aula, dentro da própria disciplina de História. <strong>Importante:</strong> não é uma eletiva — é uma aula de aprofundamento dentro da grade regular do Ensino Médio.",
+    "photos": [
+      "micro-rpg-napoleonico/01.jpg",
+      "micro-rpg-napoleonico/02.jpg"
+    ]
+  },
+  {
+    "id": "lumen-rpg",
+    "title": "Lumen RPG",
+    "badges": [
+      [
+        "badge-pink",
+        "Eletiva"
+      ],
+      [
+        "badge-muted",
+        "Ensino Fundamental"
+      ]
+    ],
+    "short": "Eletiva de RPG de mesa medieval para o Ensino Fundamental, usada como ferramenta de ensino de História, cooperação e narrativa.",
+    "full": "<strong>Eletiva do Ensino Fundamental</strong> estruturada como um RPG de mesa de ambientação medieval. Os alunos criam personagens, tomam decisões em grupo e vivenciam narrativas que dialogam com o conteúdo histórico trabalhado em sala, desenvolvendo também cooperação, tomada de decisão e argumentação. É uma das eletivas com inscrição disponível no sistema de Escolhas de Eletivas da escola.",
+    "photos": [
+      "lumen-rpg/01.jpg"
+    ]
+  },
+  {
+    "id": "vozes-femininas",
+    "title": "Projeto Vozes Femininas",
+    "badges": [
+      [
+        "badge-pink",
+        "8 de março"
+      ],
+      [
+        "badge-muted",
+        "Projeto temático"
+      ]
+    ],
+    "short": "Projeto do Dia Internacional da Mulher apresentando mulheres que trabalham na escola e mulheres que mudaram o mundo.",
+    "full": "Projeto realizado no <strong>Dia Internacional da Mulher (8 de março)</strong>, dividido em duas frentes: apresentar a história de <strong>mulheres que trabalham na própria escola</strong> — reconhecendo sua trajetória dentro da comunidade escolar — e apresentar <strong>mulheres que causaram mudanças no mundo</strong> ao longo da história, unindo a homenagem local a referências históricas mais amplas.",
+    "photos": [
+      "vozes-femininas/01.jpg",
+      "vozes-femininas/02.jpg",
+      "vozes-femininas/03.jpg"
+    ]
+  },
+  {
+    "id": "escape-room",
+    "title": "Escape Room: Revolução",
+    "badges": [
+      [
+        "badge-green",
+        "Atividade gamificada"
+      ]
+    ],
+    "short": "Escape room temático sobre a Revolução Francesa, com desafios e enigmas que exigem domínio do conteúdo histórico para avançar.",
+    "full": "Atividade de <strong>escape room</strong> ambientada na Revolução Francesa: os alunos resolvem enigmas e desafios baseados no conteúdo histórico da disciplina para \"escapar\" das fases propostas, unindo tensão narrativa, trabalho em equipe e revisão de conteúdo de forma prática.",
+    "photos": [
+      "escape-room-revolucao/01.jpg",
+      "escape-room-revolucao/02.jpg",
+      "escape-room-revolucao/03.jpg",
+      "escape-room-revolucao/04.jpg"
+    ]
+  },
+  {
+    "id": "analise-leis",
+    "title": "Análise de Leis",
+    "badges": [
+      [
+        "badge-blue",
+        "Atividade prática"
+      ]
+    ],
+    "short": "Atividade de leitura e análise crítica de documentos legislativos, aproximando os alunos da estrutura e da linguagem das leis.",
+    "full": "Atividade prática de leitura e <strong>análise crítica de documentos legislativos</strong>, na qual os alunos trabalham diretamente com textos de lei para compreender sua estrutura, linguagem e implicações históricas e sociais — desenvolvendo letramento jurídico básico dentro do conteúdo de História.",
+    "photos": [
+      "analise-leis/01.jpg",
+      "analise-leis/02.jpg",
+      "analise-leis/03.jpg"
+    ]
+  },
+  {
+    "id": "festa-junina",
+    "title": "Festa Junina",
+    "badges": [
+      [
+        "badge-amber",
+        "Evento escolar"
+      ]
+    ],
+    "short": "Participação e contribuição na organização de espaços recreativos da Festa Junina da escola, incluindo estações de jogos.",
+    "full": "Contribuição na organização da <strong>Festa Junina</strong> da escola, incluindo a montagem de estações recreativas com videogames para os alunos aproveitarem durante o evento — parte do envolvimento com atividades que fortalecem a convivência escolar para além da sala de aula.",
+    "photos": [
+      "festa-junina/01.jpg",
+      "festa-junina/02.jpg",
+      "festa-junina/03.jpg",
+      "festa-junina/04.jpg"
+    ]
+  },
+  {
+    "id": "tutoria-coletiva",
+    "title": "Tutoria Coletiva",
+    "badges": [
+      [
+        "badge-green",
+        "Dinâmica de grupo"
+      ]
+    ],
+    "short": "Dinâmica de confiança e cooperação em grupo, usando uma teia de barbante para trabalhar vínculo e convivência entre os alunos.",
+    "full": "Dinâmica de <strong>tutoria coletiva</strong> baseada em uma atividade de confiança em grupo: os alunos formam uma teia de barbante entrelaçada, trabalhando cooperação, escuta e vínculo entre a turma — uma ferramenta de convivência que também apoia o trabalho pedagógico do dia a dia.",
+    "photos": [
+      "tutoria-coletiva/01.jpg"
+    ]
+  }
+]
