@@ -1,0 +1,90 @@
+[
+  {
+    "title": "S.I.I.F. — Sistema de Investigação e Inteligência Folclórica",
+    "badges": [
+      [
+        "badge-green",
+        "desenvolvimento escolar"
+      ]
+    ],
+    "desc": "Sistema web com identidade visual de investigação policial (tema noir), desenvolvido para apoiar o projeto de Folclore em sala — transforma a pesquisa sobre lendas brasileiras em uma investigação de \"arquivo confidencial\".",
+    "shot": "assets/systems/siif-visual.jpg",
+    "links": [
+      {
+        "label": "Ver no GitHub",
+        "href": "https://github.com/Zandrafir/folclore-siif-v2"
+      }
+    ]
+  },
+  {
+    "title": "Escolhas de Eletivas",
+    "badges": [
+      [
+        "badge-blue",
+        "desenvolvimento escolar"
+      ]
+    ],
+    "desc": "Sistema de inscrição online para as eletivas da escola: os alunos escolhem e se inscrevem diretamente pela plataforma, substituindo o processo manual em papel.",
+    "shot": "assets/systems/eletivas-inscricao.jpg",
+    "links": [
+      {
+        "label": "Acessar sistema",
+        "href": "https://eletivas-escola.fly.dev"
+      }
+    ]
+  },
+  {
+    "title": "Radar Escolar",
+    "badges": [
+      [
+        "badge-muted",
+        "contribuição operacional"
+      ]
+    ],
+    "desc": "Sistema para localizar rapidamente um aluno dentro da escola — apenas para isso, sem fins pedagógicos — mas uma contribuição direta para a rotina operacional da unidade.",
+    "shot": "assets/systems/radar-escolar-turmas.jpg",
+    "links": [
+      {
+        "label": "Acessar sistema",
+        "href": "https://radar-escolar-ten.vercel.app"
+      },
+      {
+        "label": "Ver no GitHub",
+        "href": "https://github.com/Zandrafir/radar-escolar"
+      }
+    ]
+  },
+  {
+    "title": "EphimCoins",
+    "badges": [
+      [
+        "badge-pink",
+        "desenvolvimento escolar"
+      ],
+      [
+        "badge-muted",
+        "gamificação"
+      ]
+    ],
+    "desc": "Plataforma de gamificação por turma (não individual): pontuação por critérios de comportamento e participação, ranking público, vitrine de recompensas e painel do professor. Desenvolvido em Next.js com banco de dados Postgres.",
+    "shot": "assets/systems/ephimcoins-home.jpg",
+    "links": [
+      {
+        "label": "Acessar sistema",
+        "href": "https://ephimcoins.vercel.app"
+      }
+    ]
+  },
+  {
+    "title": "Sexta Retrô",
+    "badges": [
+      [
+        "badge-amber",
+        "em desenvolvimento"
+      ]
+    ],
+    "desc": "Projeto pedagógico em desenvolvimento para combater a infrequência escolar às sextas-feiras: um desafio de videogame retrô (\"Desafie o Professor\") no qual só participa quem teve frequência integral na semana. App PWA offline-first sincronizado com Google Sheets, fundamentado na Pedagogia da Presença e na gamificação educacional.",
+    "shot": null,
+    "links": []
+  }
+]
