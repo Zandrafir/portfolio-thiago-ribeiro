@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Portfólio Thiago Ribeiro</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --bg:#0b0f14; --panel:#111823; --panel-2:#0e141c; --border:#1e2a38;
+    --text:#dbe6f0; --muted:#7d8ea3; --accent:#3ee08b; --accent-2:#4fb3ff;
+    --danger:#ff5d6c; --amber:#ffbe55; --radius:10px;
+    font-family:'JetBrains Mono','Fira Code',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);margin:0;min-height:100vh;line-height:1.5;font-size:14px}
+  a{color:var(--accent-2)}
+  header{position:sticky;top:0;z-index:20;background:rgba(11,15,20,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  header h1{font-size:15px;margin:0;font-weight:600;color:var(--accent)}
+  header h1 span{color:var(--muted);font-weight:400}
+  .status-pill{font-size:11px;padding:3px 9px;border-radius:99px;border:1px solid var(--border);color:var(--muted)}
+  .status-pill.ok{color:var(--accent);border-color:var(--accent)}
+  .status-pill.err{color:var(--danger);border-color:var(--danger)}
+  .spacer{flex:1}
+  main{max-width:980px;margin:0 auto;padding:24px 20px 80px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px}
+  .card h2{margin:0 0 4px;font-size:15px;color:var(--accent-2)}
+  .card .hint{color:var(--muted);font-size:12.5px;margin:0 0 16px}
+  label{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px}
+  label:first-child{margin-top:0}
+  input[type=text],input[type=password],input[type=url],textarea,select{
+    width:100%;background:var(--panel-2);border:1px solid var(--border);border-radius:6px;
+    color:var(--text);padding:9px 11px;font-family:inherit;font-size:13.5px;
+  }
+  textarea{resize:vertical;min-height:70px}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent-2)}
+  button{cursor:pointer;font-family:inherit;font-size:13px;border-radius:6px;border:1px solid var(--border);
+    background:var(--panel-2);color:var(--text);padding:9px 16px;transition:.15s}
+  button:hover{border-color:var(--accent-2)}
+  button.primary{background:var(--accent);color:#04140a;border-color:var(--accent);font-weight:600}
+  button.primary:hover{filter:brightness(1.08)}
+  button.danger{color:var(--danger);border-color:var(--danger)}
+  button.danger:hover{background:rgba(255,93,108,.1)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  button.small{padding:5px 10px;font-size:12px}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .row > *{flex:1;min-width:180px}
+  .item{border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:12px;background:var(--panel-2)}
+  .item-head{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer}
+  .item-head h3{margin:0;font-size:14px;color:var(--text)}
+  .item-head .meta{color:var(--muted);font-size:12px}
+  .item-body{margin-top:14px;display:none}
+  .item.open .item-body{display:block}
+  .item-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .badge-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .badge-chip{display:flex;align-items:center;gap:6px;background:#182231;border:1px solid var(--border);
+    border-radius:99px;padding:3px 6px 3px 10px;font-size:11.5px}
+  .badge-chip button{padding:1px 6px;font-size:11px;border:none;background:none;color:var(--danger)}
+  .link-list, .photo-list{margin-top:6px}
+  .link-row, .photo-row{display:flex;gap:8px;margin-bottom:6px;align-items:center}
+  .link-row input{flex:1}
+  .photo-row{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:12.5px;color:var(--muted)}
+  .photo-row img{width:40px;height:40px;object-fit:cover;border-radius:4px}
+  .photo-row span{flex:1;word-break:break-all}
+  .dropzone{border:1.5px dashed var(--border);border-radius:8px;padding:18px;text-align:center;color:var(--muted);
+    font-size:12.5px;margin-top:10px;cursor:pointer}
+  .dropzone.drag{border-color:var(--accent-2);color:var(--accent-2)}
+  .log{background:#050708;border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-size:12px;
+    max-height:180px;overflow-y:auto;white-space:pre-wrap;margin-top:14px;color:var(--muted)}
+  .log .ok{color:var(--accent)}
+  .log .err{color:var(--danger)}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap}
+  .gate{max-width:460px;margin:14vh auto 0;text-align:center}
+  .gate h1{color:var(--accent);font-size:18px}
+  .gate p{color:var(--muted);font-size:13px}
+  .gate ol{text-align:left;color:var(--muted);font-size:12.5px;padding-left:18px}
+  .gate ol li{margin-bottom:6px}
+  [hidden]{display:none!important}
+  .fine{font-size:11.5px;color:var(--muted)}
+  code{background:#050708;padding:1px 6px;border-radius:4px;font-size:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>portfólio <span>/ admin</span></h1>
+  <span class="status-pill" id="repoPill">verificando…</span>
+  <div class="spacer"></div>
+  <button class="small" id="logoutBtn" hidden>sair (limpar token)</button>
+</header>
+
+<main>
+
+  <!-- GATE: token entry -->
+  <div class="card gate" id="gate">
+    <h1>Acesso ao painel</h1>
+    <p>Cole abaixo um <strong>Personal Access Token</strong> do GitHub. Ele fica salvo
+       apenas neste navegador (localStorage) — nunca é enviado para nenhum servidor além
+       do próprio GitHub.</p>
+    <label for="patInput">GitHub Personal Access Token</label>
+    <input type="password" id="patInput" placeholder="ghp_xxx / github_pat_xxx">
+    <div class="row" style="margin-top:12px">
+      <button class="primary" id="connectBtn" style="flex:1">Conectar</button>
+    </div>
+    <p class="fine" style="margin-top:18px;text-align:left">
+      Como gerar (uma vez só, dura o quanto você definir):<br>
+      <ol>
+        <li>Acesse <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a> (Fine-grained token).</li>
+        <li>Em <em>Repository access</em>, selecione <strong>Only select repositories</strong> → <code>portfolio-thiago-ribeiro</code>.</li>
+        <li>Em <em>Permissions → Repository permissions</em>, defina <strong>Contents: Read and write</strong>.</li>
+        <li>Gere e copie o token, cole aqui em cima.</li>
+      </ol>
+    </p>
+  </div>
+
+  <!-- APP -->
+  <div id="app" hidden>
+
+    <div class="card">
+      <div class="toolbar">
+        <h2 style="margin:0">Projetos pedagógicos</h2>
+        <button class="primary small" id="addProjectBtn">+ novo projeto</button>
+      </div>
+      <p class="hint">Cada alteração aqui grava direto em <code>data/projects.json</code> no repositório —
+        o site publicado reflete a mudança assim que o GitHub Pages atualizar (leva ~1 min).</p>
+      <div id="projectsList"></div>
+    </div>
+
+    <div class="card">
+      <div class="toolbar">
+        <h2 style="margin:0">Sistemas para a escola</h2>
+        <button class="primary small" id="addSystemBtn">+ novo sistema</button>
+      </div>
+      <p class="hint">Grava em <code>data/systems.json</code>.</p>
+      <div id="systemsList"></div>
+    </div>
+
+    <div class="card">
+      <h2>Atividade</h2>
+      <p class="hint">Log das últimas operações feitas nesta sessão.</p>
+      <div class="log" id="log">pronto.</div>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+/* =========================================================
+   CONFIG
+   ========================================================= */
+const OWNER = 'Zandrafir';
+const REPO = 'portfolio-thiago-ribeiro';
+const BRANCH = 'main';
+const API = 'https://api.github.com';
+
+let TOKEN = localStorage.getItem('portfolio_admin_pat') || '';
+let projects = [];
+let systems = [];
+let shaCache = {}; // path -> sha (for updates)
+
+const $ = sel => document.querySelector(sel);
+const logEl = $('#log');
+function log(msg, cls) {
+  const line = document.createElement('div');
+  if (cls) line.className = cls;
+  const t = new Date().toLocaleTimeString('pt-BR');
+  line.textContent = `[${t}] ${msg}`;
+  logEl.appendChild(line);
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+/* =========================================================
+   GITHUB API HELPERS
+   ========================================================= */
+async function ghFetch(path, opts = {}) {
+  const res = await fetch(`${API}${path}`, {
+    ...opts,
+    headers: {
+      'Authorization': `Bearer ${TOKEN}`,
+      'Accept': 'application/vnd.github+json',
+      ...(opts.headers || {}),
+    },
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`GitHub API ${res.status}: ${body.slice(0,300)}`);
+  }
+  return res.status === 204 ? null : res.json();
+}
+
+// Reads a file's content (decoded) + sha. Returns null if it doesn't exist yet.
+async function ghGetFile(path) {
+  try {
+    const data = await ghFetch(`/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path)}?ref=${BRANCH}`);
+    shaCache[path] = data.sha;
+    const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
+    return { content, sha: data.sha };
+  } catch (e) {
+    if (String(e.message).includes('404')) return null;
+    throw e;
+  }
+}
+
+// Writes (create or update) a text file.
+async function ghPutFile(path, content, message) {
+  const body = {
+    message,
+    content: btoa(unescape(encodeURIComponent(content))),
+    branch: BRANCH,
+  };
+  if (shaCache[path]) body.sha = shaCache[path];
+  const data = await ghFetch(`/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path)}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+  shaCache[path] = data.content.sha;
+  return data;
+}
+
+// Writes a binary file (base64 already prepared), for photo uploads.
+async function ghPutBinary(path, base64Content, message) {
+  const body = { message, content: base64Content, branch: BRANCH };
+  if (shaCache[path]) body.sha = shaCache[path];
+  const data = await ghFetch(`/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path)}`, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+  shaCache[path] = data.content.sha;
+  return data;
+}
+
+async function saveProjects(message) {
+  await ghPutFile('data/projects.json', JSON.stringify(projects, null, 2), message);
+}
+async function saveSystems(message) {
+  await ghPutFile('data/systems.json', JSON.stringify(systems, null, 2), message);
+}
+
+/* =========================================================
+   AUTH GATE
+   ========================================================= */
+async function tryConnect(token) {
+  TOKEN = token;
+  const pill = $('#repoPill');
+  pill.textContent = 'verificando…';
+  pill.className = 'status-pill';
+  try {
+    const repo = await ghFetch(`/repos/${OWNER}/${REPO}`);
+    pill.textContent = `conectado: ${repo.full_name}`;
+    pill.className = 'status-pill ok';
+    localStorage.setItem('portfolio_admin_pat', token);
+    $('#gate').hidden = true;
+    $('#app').hidden = false;
+    $('#logoutBtn').hidden = false;
+    await loadData();
+  } catch (e) {
+    pill.textContent = 'falha na conexão';
+    pill.className = 'status-pill err';
+    $('#gate').hidden = false;
+    $('#app').hidden = true;
+    log('Erro ao conectar: ' + e.message, 'err');
+    alert('Não foi possível conectar com esse token. Verifique se ele tem permissão "Contents: Read and write" no repositório ' + OWNER + '/' + REPO + '.\n\nDetalhe: ' + e.message);
+  }
+}
+
+$('#connectBtn').addEventListener('click', () => {
+  const v = $('#patInput').value.trim();
+  if (!v) return;
+  tryConnect(v);
+});
+$('#patInput').addEventListener('keydown', e => { if (e.key === 'Enter') $('#connectBtn').click(); });
+
+$('#logoutBtn').addEventListener('click', () => {
+  localStorage.removeItem('portfolio_admin_pat');
+  location.reload();
+});
+
+async function loadData() {
+  try {
+    const pf = await ghGetFile('data/projects.json');
+    const sf = await ghGetFile('data/systems.json');
+    projects = pf ? JSON.parse(pf.content) : [];
+    systems = sf ? JSON.parse(sf.content) : [];
+    renderProjects();
+    renderSystems();
+    log('Dados carregados do repositório.', 'ok');
+  } catch (e) {
+    log('Erro ao carregar dados: ' + e.message, 'err');
+  }
+}
+
+if (TOKEN) tryConnect(TOKEN);
+
+/* =========================================================
+   HELPERS: ids, slugs, badges
+   ========================================================= */
+function slugify(s) {
+  return s.toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+}
+function el(html) {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content.firstChild;
+}
+const BADGE_COLORS = ['badge-green','badge-blue','badge-pink','badge-amber','badge-muted'];
+
+/* =========================================================
+   RENDER: PROJECTS
+   ========================================================= */
+function renderProjects() {
+  const list = $('#projectsList');
+  list.innerHTML = '';
+  if (!projects.length) list.innerHTML = '<p class="hint">Nenhum projeto ainda.</p>';
+  projects.forEach((proj, idx) => {
+    const item = el(`
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <h3>${proj.title || '(sem título)'}</h3>
+            <div class="meta">${(proj.photos||[]).length} foto(s) · id: ${proj.id}</div>
+          </div>
+          <button class="small toggleBtn">editar</button>
+        </div>
+        <div class="item-body"></div>
+      </div>
+    `);
+    const body = item.querySelector('.item-body');
+    body.appendChild(buildProjectForm(proj, idx));
+    item.querySelector('.item-head').addEventListener('click', (e) => {
+      item.classList.toggle('open');
+    });
+    list.appendChild(item);
+  });
+}
+
+function buildProjectForm(proj, idx) {
+  const wrap = el(`<div></div>`);
+  wrap.innerHTML = `
+    <label>ID (usado na pasta de fotos, sem espaços)</label>
+    <input type="text" class="f-id" value="${proj.id||''}">
+    <label>Título</label>
+    <input type="text" class="f-title" value="${proj.title||''}">
+    <label>Descrição curta (aparece fechado)</label>
+    <textarea class="f-short">${proj.short||''}</textarea>
+    <label>Descrição completa (HTML permitido, aparece expandido)</label>
+    <textarea class="f-full" style="min-height:110px">${proj.full||''}</textarea>
+    <label>Badges (rótulos coloridos)</label>
+    <div class="badge-list" id="badges-${idx}"></div>
+    <div class="row" style="margin-top:8px">
+      <input type="text" class="new-badge-text" placeholder="texto do badge">
+      <select class="new-badge-color">
+        <option value="badge-green">verde</option>
+        <option value="badge-blue">azul</option>
+        <option value="badge-pink">rosa</option>
+        <option value="badge-amber">âmbar</option>
+        <option value="badge-muted">neutro</option>
+      </select>
+      <button class="small addBadgeBtn" type="button" style="flex:0 0 auto">+ badge</button>
+    </div>
+    <label>Fotos</label>
+    <div class="photo-list"></div>
+    <div class="dropzone" tabindex="0">
+      Clique para escolher fotos ou arraste aqui (envia direto para o repositório)
+      <input type="file" accept="image/*" multiple hidden>
+    </div>
+    <div class="item-actions">
+      <button class="primary saveProjBtn">salvar alterações</button>
+      <button class="danger deleteProjBtn">excluir projeto</button>
+    </div>
+  `;
+
+  const badgesEl = wrap.querySelector(`#badges-${idx}`);
+  function renderBadges() {
+    badgesEl.innerHTML = '';
+    (proj.badges||[]).forEach((b, bi) => {
+      const chip = el(`<span class="badge-chip">${b[1]} <button type="button">×</button></span>`);
+      chip.querySelector('button').addEventListener('click', () => { proj.badges.splice(bi,1); renderBadges(); });
+      badgesEl.appendChild(chip);
+    });
+  }
+  renderBadges();
+  wrap.querySelector('.addBadgeBtn').addEventListener('click', () => {
+    const text = wrap.querySelector('.new-badge-text').value.trim();
+    const color = wrap.querySelector('.new-badge-color').value;
+    if (!text) return;
+    proj.badges = proj.badges || [];
+    proj.badges.push([color, text]);
+    wrap.querySelector('.new-badge-text').value = '';
+    renderBadges();
+  });
+
+  const photoListEl = wrap.querySelector('.photo-list');
+  function renderPhotos() {
+    photoListEl.innerHTML = '';
+    (proj.photos||[]).forEach((p, pi) => {
+      const row = el(`
+        <div class="photo-row">
+          <img src="assets/gallery/${p}" loading="lazy" onerror="this.style.opacity=0.2">
+          <span>${p}</span>
+          <button class="small" type="button">remover</button>
+        </div>
+      `);
+      row.querySelector('button').addEventListener('click', () => {
+        if (!confirm('Remover esta foto da lista? (o arquivo continua no GitHub, apenas some do site)')) return;
+        proj.photos.splice(pi,1);
+        renderPhotos();
+      });
+      photoListEl.appendChild(row);
+    });
+  }
+  renderPhotos();
+
+  const dropzone = wrap.querySelector('.dropzone');
+  const fileInput = wrap.querySelector('input[type=file]');
+  dropzone.addEventListener('click', () => fileInput.click());
+  dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('drag'); });
+  dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag'));
+  dropzone.addEventListener('drop', e => {
+    e.preventDefault(); dropzone.classList.remove('drag');
+    handleFiles(e.dataTransfer.files);
+  });
+  fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+  async function handleFiles(fileList) {
+    const files = Array.from(fileList);
+    if (!files.length) return;
+    const id = wrap.querySelector('.f-id').value.trim() || proj.id;
+    if (!id) { alert('Defina o ID do projeto antes de enviar fotos.'); return; }
+    dropzone.textContent = `enviando ${files.length} foto(s)…`;
+    let nextNum = 1 + (proj.photos||[]).reduce((max,p) => {
+      const m = p.match(/(\d+)\.\w+$/);
+      return m ? Math.max(max, parseInt(m[1],10)) : max;
+    }, 0);
+    for (const file of files) {
+      try {
+        const resized = await resizeImageToBase64(file, 1600, 0.82);
+        const num = String(nextNum++).padStart(2,'0');
+        const relPath = `${id}/${num}.jpg`;
+        const fullPath = `assets/gallery/${relPath}`;
+        log(`Enviando ${file.name} → ${fullPath}…`);
+        await ghPutBinary(fullPath, resized, `admin: adiciona foto ${relPath}`);
+        proj.photos = proj.photos || [];
+        proj.photos.push(relPath);
+        log(`✓ ${fullPath} enviado.`, 'ok');
+      } catch (e) {
+        log(`✗ Falha ao enviar ${file.name}: ${e.message}`, 'err');
+      }
+    }
+    renderPhotos();
+    dropzone.textContent = 'Clique para escolher fotos ou arraste aqui (envia direto para o repositório)';
+    fileInput.value = '';
+  }
+
+  wrap.querySelector('.saveProjBtn').addEventListener('click', async () => {
+    proj.id = wrap.querySelector('.f-id').value.trim();
+    proj.title = wrap.querySelector('.f-title').value.trim();
+    proj.short = wrap.querySelector('.f-short').value.trim();
+    proj.full = wrap.querySelector('.f-full').value.trim();
+    if (!proj.id || !proj.title) { alert('ID e título são obrigatórios.'); return; }
+    try {
+      await saveProjects(`admin: atualiza projeto ${proj.id}`);
+      log(`✓ Projeto "${proj.title}" salvo.`, 'ok');
+      renderProjects();
+    } catch (e) {
+      log(`✗ Erro ao salvar projeto: ${e.message}`, 'err');
+      alert('Erro ao salvar: ' + e.message);
+    }
+  });
+
+  wrap.querySelector('.deleteProjBtn').addEventListener('click', async () => {
+    if (!confirm(`Excluir o projeto "${proj.title}"? As fotos permanecem no repositório, apenas o projeto some da lista.`)) return;
+    projects.splice(idx, 1);
+    try {
+      await saveProjects(`admin: remove projeto ${proj.id}`);
+      log(`Projeto removido.`, 'ok');
+      renderProjects();
+    } catch (e) {
+      log(`✗ Erro ao remover: ${e.message}`, 'err');
+    }
+  });
+
+  return wrap;
+}
+
+$('#addProjectBtn').addEventListener('click', () => {
+  const title = prompt('Título do novo projeto:');
+  if (!title) return;
+  const id = slugify(title);
+  if (projects.some(p => p.id === id)) { alert('Já existe um projeto com esse ID/título.'); return; }
+  projects.push({ id, title, badges: [], short: '', full: '', photos: [] });
+  renderProjects();
+  // auto-open + save skeleton
+  saveProjects(`admin: cria projeto ${id}`).then(() => log(`✓ Projeto "${title}" criado.`, 'ok'))
+    .catch(e => log(`✗ Erro ao criar projeto: ${e.message}`, 'err'));
+});
+
+/* =========================================================
+   RENDER: SYSTEMS
+   ========================================================= */
+function renderSystems() {
+  const list = $('#systemsList');
+  list.innerHTML = '';
+  if (!systems.length) list.innerHTML = '<p class="hint">Nenhum sistema ainda.</p>';
+  systems.forEach((sys, idx) => {
+    const item = el(`
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <h3>${sys.title || '(sem título)'}</h3>
+            <div class="meta">${(sys.links||[]).length} link(s)</div>
+          </div>
+          <button class="small toggleBtn">editar</button>
+        </div>
+        <div class="item-body"></div>
+      </div>
+    `);
+    const body = item.querySelector('.item-body');
+    body.appendChild(buildSystemForm(sys, idx));
+    item.querySelector('.item-head').addEventListener('click', () => item.classList.toggle('open'));
+    list.appendChild(item);
+  });
+}
+
+function buildSystemForm(sys, idx) {
+  const wrap = el(`<div></div>`);
+  wrap.innerHTML = `
+    <label>Título</label>
+    <input type="text" class="f-title" value="${sys.title||''}">
+    <label>Descrição</label>
+    <textarea class="f-desc">${sys.desc||''}</textarea>
+    <label>Badges</label>
+    <div class="badge-list" id="sbadges-${idx}"></div>
+    <div class="row" style="margin-top:8px">
+      <input type="text" class="new-badge-text" placeholder="texto do badge">
+      <select class="new-badge-color">
+        <option value="badge-green">verde</option>
+        <option value="badge-blue">azul</option>
+        <option value="badge-pink">rosa</option>
+        <option value="badge-amber">âmbar</option>
+        <option value="badge-muted">neutro</option>
+      </select>
+      <button class="small addBadgeBtn" type="button" style="flex:0 0 auto">+ badge</button>
+    </div>
+    <label>Captura de tela (screenshot)</label>
+    <div class="dropzone" tabindex="0">
+      ${sys.shot ? `imagem atual: <code>${sys.shot}</code> — clique para substituir` : 'clique para enviar uma captura de tela'}
+      <input type="file" accept="image/*" hidden>
+    </div>
+    <label>Links</label>
+    <div class="link-list"></div>
+    <div class="row" style="margin-top:4px">
+      <input type="text" class="new-link-label" placeholder="rótulo (ex: Acessar sistema)">
+      <input type="url" class="new-link-href" placeholder="https://...">
+      <button class="small addLinkBtn" type="button" style="flex:0 0 auto">+ link</button>
+    </div>
+    <div class="item-actions">
+      <button class="primary saveSysBtn">salvar alterações</button>
+      <button class="danger deleteSysBtn">excluir sistema</button>
+    </div>
+  `;
+
+  const badgesEl = wrap.querySelector(`#sbadges-${idx}`);
+  function renderBadges() {
+    badgesEl.innerHTML = '';
+    (sys.badges||[]).forEach((b, bi) => {
+      const chip = el(`<span class="badge-chip">${b[1]} <button type="button">×</button></span>`);
+      chip.querySelector('button').addEventListener('click', () => { sys.badges.splice(bi,1); renderBadges(); });
+      badgesEl.appendChild(chip);
+    });
+  }
+  renderBadges();
+  wrap.querySelector('.addBadgeBtn').addEventListener('click', () => {
+    const text = wrap.querySelector('.new-badge-text').value.trim();
+    const color = wrap.querySelector('.new-badge-color').value;
+    if (!text) return;
+    sys.badges = sys.badges || [];
+    sys.badges.push([color, text]);
+    wrap.querySelector('.new-badge-text').value = '';
+    renderBadges();
+  });
+
+  const linkListEl = wrap.querySelector('.link-list');
+  function renderLinks() {
+    linkListEl.innerHTML = '';
+    (sys.links||[]).forEach((l, li) => {
+      const row = el(`
+        <div class="link-row">
+          <input type="text" value="${l.label}" data-f="label">
+          <input type="url" value="${l.href}" data-f="href">
+          <button class="small" type="button">×</button>
+        </div>
+      `);
+      row.querySelector('[data-f=label]').addEventListener('input', e => l.label = e.target.value);
+      row.querySelector('[data-f=href]').addEventListener('input', e => l.href = e.target.value);
+      row.querySelector('button').addEventListener('click', () => { sys.links.splice(li,1); renderLinks(); });
+      linkListEl.appendChild(row);
+    });
+  }
+  renderLinks();
+  wrap.querySelector('.addLinkBtn').addEventListener('click', () => {
+    const label = wrap.querySelector('.new-link-label').value.trim();
+    const href = wrap.querySelector('.new-link-href').value.trim();
+    if (!label || !href) return;
+    sys.links = sys.links || [];
+    sys.links.push({ label, href });
+    wrap.querySelector('.new-link-label').value = '';
+    wrap.querySelector('.new-link-href').value = '';
+    renderLinks();
+  });
+
+  const dropzone = wrap.querySelector('.dropzone');
+  const fileInput = wrap.querySelector('input[type=file]');
+  dropzone.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', async () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+    const title = wrap.querySelector('.f-title').value.trim() || sys.title || 'sistema';
+    const slug = slugify(title);
+    try {
+      const resized = await resizeImageToBase64(file, 1600, 0.85);
+      const path = `assets/systems/${slug}.jpg`;
+      dropzone.textContent = 'enviando…';
+      await ghPutBinary(path, resized, `admin: atualiza captura de ${slug}`);
+      sys.shot = path;
+      log(`✓ Captura de tela enviada para ${path}.`, 'ok');
+      dropzone.innerHTML = `imagem atual: <code>${path}</code> — clique para substituir`;
+    } catch (e) {
+      log(`✗ Falha ao enviar captura: ${e.message}`, 'err');
+    }
+  });
+
+  wrap.querySelector('.saveSysBtn').addEventListener('click', async () => {
+    sys.title = wrap.querySelector('.f-title').value.trim();
+    sys.desc = wrap.querySelector('.f-desc').value.trim();
+    if (!sys.title) { alert('Título é obrigatório.'); return; }
+    try {
+      await saveSystems(`admin: atualiza sistema ${sys.title}`);
+      log(`✓ Sistema "${sys.title}" salvo.`, 'ok');
+      renderSystems();
+    } catch (e) {
+      log(`✗ Erro ao salvar: ${e.message}`, 'err');
+      alert('Erro ao salvar: ' + e.message);
+    }
+  });
+
+  wrap.querySelector('.deleteSysBtn').addEventListener('click', async () => {
+    if (!confirm(`Excluir o sistema "${sys.title}"?`)) return;
+    systems.splice(idx, 1);
+    try {
+      await saveSystems(`admin: remove sistema ${sys.title}`);
+      log('Sistema removido.', 'ok');
+      renderSystems();
+    } catch (e) {
+      log(`✗ Erro ao remover: ${e.message}`, 'err');
+    }
+  });
+
+  return wrap;
+}
+
+$('#addSystemBtn').addEventListener('click', () => {
+  const title = prompt('Título do novo sistema:');
+  if (!title) return;
+  systems.push({ title, badges: [], desc: '', shot: null, links: [] });
+  saveSystems(`admin: cria sistema ${title}`).then(() => {
+    log(`✓ Sistema "${title}" criado.`, 'ok');
+    renderSystems();
+  }).catch(e => log(`✗ Erro ao criar sistema: ${e.message}`, 'err'));
+});
+
+/* =========================================================
+   IMAGE RESIZE (client-side, para funcionar bem a partir do celular)
+   ========================================================= */
+function resizeImageToBase64(file, maxDim, quality) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const reader = new FileReader();
+    reader.onload = () => { img.src = reader.result; };
+    reader.onerror = reject;
+    img.onload = () => {
+      let { width, height } = img;
+      if (width > maxDim || height > maxDim) {
+        if (width > height) { height = Math.round(height * maxDim / width); width = maxDim; }
+        else { width = Math.round(width * maxDim / height); height = maxDim; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = width; canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, width, height);
+      const dataUrl = canvas.toDataURL('image/jpeg', quality);
+      resolve(dataUrl.split(',')[1]); // base64 only, no prefix
+    };
+    img.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+</script>
+</body>
+</html>
