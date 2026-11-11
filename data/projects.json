@@ -98,7 +98,7 @@
       ]
     ],
     "short": "Eletiva de RPG de mesa sobre Iluminismo e Revoluções, com mistério sombrio em Verneuil, 1789. Cerca de 40 alunos em 6 Círculos sociais.",
-    "full": "<strong>Eletiva de RPG de mesa</strong> que une História, regras de jogo, design editorial e ferramenta digital. O cenário é a cidade fictícia de Verneuil, em 1789, e o vilão é o \"Devorador de Luzes\". Cerca de 40 alunos do 6º ao 9º ano jogam em 6 grupos que representam os Círculos da sociedade: Alto Clero, Nobreza, Burguesia, Trabalhadores Urbanos, Camponeses e Militares.<br><br>Material produzido: Livro do Jogo (regras) e Livro da Aventura (campanha adaptada para 7–8 encontros de 90 min), Guia dos Círculos fotocopiável, bestiário de 40 inimigos, 50 armas em 3 eras, diário de sessão e um <strong>mapa interativo de Verneuil</strong> com modo mestre e público. A campanha é ajustada ao vivo conforme o jogo se desvia do roteiro. Em execução em novembro de 2026.",
+    "full": "<strong>Eletiva de RPG de mesa</strong> que une História, regras de jogo, design editorial e ferramenta digital. O cenário é a cidade fictícia de Verneuil, em 1789, e o vilão é o \"Devorador de Luzes\". Cerca de 40 alunos do 6º ao 9º ano jogam em 6 grupos que representam os Círculos da sociedade: Alto Clero, Nobreza, Burguesia, Trabalhadores Urbanos, Camponeses e Militares.<br><br>Material produzido: Livro do Jogo (regras) e Livro da Aventura (campanha adaptada para 7–8 encontros de 90 min), Guia dos Círculos fotocopiável, bestiário de 40 inimigos, 50 armas em 3 eras, diário de sessão e um <strong>mapa interativo de Verneuil</strong> com modo mestre e público. A campanha é ajustada ao vivo conforme o jogo se desvia do roteiro. Em execução em novembro de 2026.<br><br><a href=\"https://zandrafir.github.io/jogos-educativos/lumen-mapa-verneuil/\" target=\"_blank\" rel=\"noopener\">Abrir o mapa interativo de Verneuil</a>",
     "photos": [
       "lumen-rpg/01.jpg"
     ]
@@ -203,7 +203,9 @@
     ],
     "short": "Escape room de 20 minutos que reúne as eletivas de História, Português, Ciências, Arte e Educação Financeira.",
     "full": "Culminância conjunta de 5 eletivas. Uma sala, um personagem (o Guardião, vivido por um aluno) e 4 estações (História, Português, Ciências e Arte) que revelam os dígitos de um cofre. Inclui falas por cena, enigmas com solução, planta da sala, lista de materiais e \"modo luz plena\" de acessibilidade. A primeira versão, o Museu dos Casos Extraordinários, foi simplificada após conversa com a equipe.",
-    "photos": []
+    "photos": [
+      "vela-mestra/01.jpg"
+    ]
   },
   {
     "id": "forense",
@@ -220,7 +222,9 @@
     ],
     "short": "30 aulas em 15 semanas, com culminância em uma cena de crime simulada.",
     "full": "Proposta pedagógica completa no modelo oficial da escola: ementa, objetivos, conteúdo por semana, avaliação e bibliografia. Culmina em uma cena de crime simulada.",
-    "photos": []
+    "photos": [
+      "forense/01.jpg"
+    ]
   },
   {
     "id": "copa-trabalhador",
@@ -233,7 +237,9 @@
     ],
     "short": "Eletiva \"O Mundo em Campo\" com Boletim Esportivo e feira de profissões com ciclo de palestras.",
     "full": "Eletiva de 20 h (10 semanas) alinhada à BNCC, com aprendizagem baseada em projetos. O produto final é um Boletim Esportivo em três formatos: apresentação, PDF em estilo de jornal e site interativo. O projeto do Mês do Trabalhador reuniu feira de profissões e ciclo de palestras ao longo de maio.",
-    "photos": []
+    "photos": [
+      "copa-trabalhador/01.jpg"
+    ]
   },
   {
     "id": "cnv",
@@ -246,7 +252,9 @@
     ],
     "short": "Sábado de reposição com palestra, 6 professores e 6 estações de 25 minutos.",
     "full": "Palestra de psicóloga seguida de 6 estações conduzidas por professores de História, Ciências, Matemática, Português, Arte e Geografia, ligadas ao programa CONVIVA-SP. Produto coletivo: mural ou fanzine.",
-    "photos": []
+    "photos": [
+      "cnv/01.jpg"
+    ]
   },
   {
     "id": "mapa-estrategico",
@@ -259,7 +267,9 @@
     ],
     "short": "Ficha de autoconhecimento com estética sutil de RPG, em 4 fases individuais.",
     "full": "Ficha do aluno e roteiro do professor em 4 fases: inventário, atributos, missão e compromisso. Entregue em PDF de 2 páginas (maio de 2026).",
-    "photos": []
+    "photos": [
+      "mapa-estrategico/01.jpg"
+    ]
   },
   {
     "id": "materiais",
@@ -272,6 +282,8 @@
     ],
     "short": "Decks, revisões, planos de ensino e aula, guias de aprendizagem e cadernos adaptados para o 8º e 9º ano.",
     "full": "Decks de conteúdo (Nazismo e simbologia, repressão na ditadura civil-militar), revisões em PDF para o 8º ano, revisão interativa para o SARESP do 9º ano com abas por tema e botão de resposta, e planos de ensino e aula e guias de aprendizagem de todas as turmas no 3º e 4º bimestres. Inclui <strong>cadernos de atividades individualizados</strong> para alunos com necessidades específicas, com apoio visual, bancos de palavras e acompanhamento de progresso.",
-    "photos": []
+    "photos": [
+      "materiais/01.jpg"
+    ]
   }
 ]
