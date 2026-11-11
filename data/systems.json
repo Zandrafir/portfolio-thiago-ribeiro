@@ -86,5 +86,100 @@
     "desc": "Projeto pedagógico em desenvolvimento para combater a infrequência escolar às sextas-feiras: um desafio de videogame retrô (\"Desafie o Professor\") no qual só participa quem teve frequência integral na semana. App PWA offline-first sincronizado com Google Sheets, fundamentado na Pedagogia da Presença e na gamificação educacional.",
     "shot": null,
     "links": []
+  },
+  {
+    "title": "Mundos de Fuga",
+    "badges": [
+      [
+        "badge-green",
+        "plataforma de jogos"
+      ]
+    ],
+    "desc": "Plataforma de jogos em formato de sala de fuga para as 5 disciplinas, com 32 lições, avatar, estrelas e painel para cada professor liberar as salas. Alunos com acesso desde 04/11/2026.",
+    "shot": null,
+    "links": [
+      {
+        "label": "Acessar sistema",
+        "href": "https://mundos-de-fuga.onrender.com"
+      }
+    ]
+  },
+  {
+    "title": "Din Din Mindlin",
+    "badges": [
+      [
+        "badge-amber",
+        "jogo educativo"
+      ]
+    ],
+    "desc": "Jogo de educação financeira com compra, venda, imposto baseado na Selic e ranking em nuvem.",
+    "shot": null,
+    "links": [
+      {
+        "label": "Jogar",
+        "href": "https://zandrafir.github.io/din-din-mindlin/"
+      },
+      {
+        "label": "Ver no GitHub",
+        "href": "https://github.com/Zandrafir/din-din-mindlin"
+      }
+    ]
+  },
+  {
+    "title": "Escolha de Clubes",
+    "badges": [
+      [
+        "badge-blue",
+        "desenvolvimento escolar"
+      ]
+    ],
+    "desc": "Sistema para os alunos escolherem seus clubes.",
+    "shot": null,
+    "links": [
+      {
+        "label": "Acessar sistema",
+        "href": "https://zandrafir.github.io/clubes-app/"
+      },
+      {
+        "label": "Ver no GitHub",
+        "href": "https://github.com/Zandrafir/clubes-app"
+      }
+    ]
+  },
+  {
+    "title": "Tutoria Conectada",
+    "badges": [
+      [
+        "badge-green",
+        "desenvolvimento escolar"
+      ]
+    ],
+    "desc": "Acompanhamento do Projeto de Vida no Ensino Médio: o aluno entra com o RA, responde ao questionário inicial e a tutorias semanais, e o professor acompanha em painel próprio. Em uso com cerca de 25 alunos.",
+    "shot": null,
+    "links": []
+  },
+  {
+    "title": "Leitor de folha de respostas",
+    "badges": [
+      [
+        "badge-muted",
+        "protótipo"
+      ]
+    ],
+    "desc": "Lê a foto da folha de respostas (QR Code, 40 questões, marcações em branco e duplas, correção de perspectiva) para corrigir provas no modelo SARESP.",
+    "shot": null,
+    "links": []
+  },
+  {
+    "title": "Jogos de revisão em HTML",
+    "badges": [
+      [
+        "badge-amber",
+        "jogos educativos"
+      ]
+    ],
+    "desc": "A Era das Revoluções (mapa 2D para 5 grupos, 8º ano), RPG 2D do Brasil Imperial, Professor π (matemática, feito para uma colega) e HistoriFlix (aulas em estilo streaming).",
+    "shot": null,
+    "links": []
   }
 ]

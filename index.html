@@ -701,8 +701,8 @@ EDU_PROJECTS.forEach((proj, idx) => {
   el.innerHTML = `
     <div class="edu-head" data-toggle="${proj.id}">
       <div class="edu-cover">
-        <img src="${cover}" alt="${proj.title}" loading="lazy">
-        <div class="count-chip">${photos.length} foto${photos.length > 1 ? 's' : ''}</div>
+        ${cover ? `<img src="${cover}" alt="${proj.title}" loading="lazy">
+        <div class="count-chip">${photos.length} foto${photos.length > 1 ? 's' : ''}</div>` : ''}
       </div>
       <div class="edu-info">
         <h3>${proj.title}</h3>
